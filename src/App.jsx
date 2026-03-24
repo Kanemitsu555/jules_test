@@ -1,12 +1,13 @@
 import { useState } from 'react'
+import { Routes, Route, Link } from 'react-router-dom'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
+import Dashboard from './pages/Dashboard'
 import './App.css'
 
-function App() {
+const Home = () => {
   const [count, setCount] = useState(0)
-
   return (
     <>
       <section id="center">
@@ -27,6 +28,14 @@ function App() {
         >
           Count is {count}
         </button>
+        <div className="mt-8">
+          <Link
+            to="/dashboard"
+            className="text-white bg-purple-600 hover:bg-purple-700 px-6 py-3 rounded-lg font-medium transition-colors"
+          >
+            Go to Dashboard
+          </Link>
+        </div>
       </section>
 
       <div className="ticks"></div>
@@ -115,6 +124,15 @@ function App() {
       <div className="ticks"></div>
       <section id="spacer"></section>
     </>
+  )
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+    </Routes>
   )
 }
 
