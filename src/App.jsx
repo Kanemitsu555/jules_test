@@ -4,6 +4,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import Dashboard from './pages/Dashboard'
+import Slack from './pages/Slack'
 import './App.css'
 
 const Home = () => {
@@ -132,6 +133,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/slack" element={<Slack />} />
     </Routes>
   )
 }
